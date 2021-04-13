@@ -1,25 +1,55 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import styled from 'styled-components'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const AppWrapper = styled.div`
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 100vh;
+ background-color: #282c34;
+`
+
+const Header = styled.header`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-family: Helvetica;
+`
+
+const MainMessage = styled.p`
+  color: white;
+`
+
+const Link = styled.a`
+  color: #61dafb;
+  text-decoration: none;
+  
+  :hover {
+    color: white;
+  }
+`
+
+class App extends Component {
+  render() {
+    return (
+      <AppWrapper>
+        <Header>
+          <MainMessage>
+            Hello React app.
+          </MainMessage>
+          <Link
+            href="https://buildreactapps.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Learn more
+          </Link>
+        </Header>
+      </AppWrapper>
+    );
+  }
 }
 
 export default App;
